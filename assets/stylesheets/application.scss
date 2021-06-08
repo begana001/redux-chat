@@ -8,10 +8,30 @@ body {
 
 .channels {
   border: 1px solid red;
+  padding: 10px;
   height: 100vh;
 }
 
-.messages {
+.messages__container {
   border: 1px solid;
+  padding: 10px;
   height: 100vh;
 }
+
+.selected-channel {
+  border-bottom: 1px solid;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.message {
+  padding: 10px;
+}
+
+.message__info {
+  display: flex;
+  justify-content: space-between;
+  color: green;
+  font-weight: bold;
+}
+
