@@ -35,3 +35,12 @@ body {
   font-weight: bold;
 }
 
+.messages__content {
+  height: 80vh;
+  border: 1px solid blue;
+}
+
+.message-form {
+  display: flex;
+  padding: 10px;
+}

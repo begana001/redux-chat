@@ -18,7 +18,9 @@ class MessageList extends Component {
           <div className="selected-channel">
             {this.props.selectedChannel}
           </div>
-          <h1>Welcome to the channel. Start conversation!</h1>
+          <div className="messages__content">
+            <h1>Welcome to the channel. Start conversation!</h1>
+          </div>
           <MessageForm />
         </div>
       );
@@ -29,9 +31,11 @@ class MessageList extends Component {
         <div className="selected-channel">
           {this.props.selectedChannel}
         </div>
-        {this.props.messages.map((message) => {
-          return <Message message={message} key={message.created_at} />
-        })}
+        <div className="messages__content">
+          {this.props.messages.map((message) => {
+            return <Message message={message} key={message.created_at} />
+          })}
+        </div>
         <MessageForm />
       </div>
     );
