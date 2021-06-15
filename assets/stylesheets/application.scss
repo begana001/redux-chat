@@ -1,17 +1,16 @@
 body {
-  font-family: Helvetica;
+  background-color: #002855;
   overflow: hidden;
 }
 
 @import 'fonts';
+@import 'cards';
 
 .app {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding: 75px;
 }
 
 .channels {
-  border: 1px solid red;
   padding: 10px;
   height: 100vh;
 }
@@ -19,13 +18,7 @@ body {
 .messages__container {
   border: 1px solid;
   padding: 10px;
-  height: 100vh;
-}
-
-.selected-channel {
-  border-bottom: 1px solid;
-  padding: 10px;
-  font-weight: bold;
+  height: 70vh;
 }
 
 .message {
@@ -40,7 +33,7 @@ body {
 }
 
 .messages__content {
-  height: 80vh;
+  height: 60vh;
   border: 1px solid blue;
   overflow-y: scroll;
 }
@@ -53,8 +46,4 @@ body {
 
 .channel {
   padding: 10px;
-}
-
-.selected {
-  font-weight: bold;
 }

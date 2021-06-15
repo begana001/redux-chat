@@ -2,17 +2,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
 //font-family: 'Raleway', sans-serif;
 
-// Quicksand 300 400 500
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+// Quicksand 300 500 600 700
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;600;700&display=swap');
 //font-family: 'Quicksand', sans-serif;
 
 // Inter 100 200 300 400
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&display=swap');
 //font-family: 'Inter', sans-serif;
 
-$h1: 48px;
+body {
+  color: white;
+}
+
+$h1: 40px;
+$h2: 32px;
+$h3: 24px;
+$h4: 21px;
 
 .title{
   font-family: 'Raleway', sans-serif;
   font-size: $h1;
+  letter-spacing: 4px;
+}
+
+.channels {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.channels__title {
+  font-size: $h3;
+}
+
+.selected {
+  font-weight: 700;
+}
+
+.channel {
+  list-style-type: none;
+  font-size: $h4;
 }
