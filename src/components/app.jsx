@@ -8,7 +8,7 @@ import MessageList from '../containers/message_list.jsx';
 const App = () => {
   return (
     <div className="app row">
-      <h1 className="title">Redux Chat  {/*<FontAwesomeIcon icon={faComments} />*/}</h1>
+      <h1 className="title">Redux Chat   {/*<FontAwesomeIcon icon={faComments} />*/}</h1>
       <ChannelList />
       <MessageList />
     </div>

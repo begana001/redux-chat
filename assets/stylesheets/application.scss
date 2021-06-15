@@ -1,10 +1,10 @@
 body {
-  background-color: #002855;
+  background-color: #001845;
   overflow: hidden;
 }
 
-@import 'fonts';
-@import 'cards';
+@import './config/fonts';
+@import './config/cards';
 
 .app {
   padding: 75px;
