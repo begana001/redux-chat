@@ -1,0 +1,18 @@
+// Raleway 400 500 600
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
+//font-family: 'Raleway', sans-serif;
+
+// Quicksand 300 400 500
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+//font-family: 'Quicksand', sans-serif;
+
+// Inter 100 200 300 400
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&display=swap');
+//font-family: 'Inter', sans-serif;
+
+$h1: 48px;
+
+.title{
+  font-family: 'Raleway', sans-serif;
+  font-size: $h1;
+}

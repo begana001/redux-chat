@@ -1,6 +1,10 @@
 body {
   font-family: Helvetica;
+  overflow: hidden;
 }
+
+@import 'fonts';
+
 .app {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -38,9 +42,19 @@ body {
 .messages__content {
   height: 80vh;
   border: 1px solid blue;
+  overflow-y: scroll;
 }
 
 .message-form {
   display: flex;
+  height: 10vh;
   padding: 10px;
+}
+
+.channel {
+  padding: 10px;
+}
+
+.selected {
+  font-weight: bold;
 }

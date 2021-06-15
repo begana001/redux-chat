@@ -13,7 +13,6 @@ class MessageForm extends Component {
   }
 
   handleChange = (e) => {
-    console.log(this.state.value);
     this.setState({
       value: e.target.value
     });

@@ -7,8 +7,24 @@ import Message from '../components/message.jsx';
 import MessageForm from './message_form.jsx';
 
 class MessageList extends Component {
-  componentWillMount() {
+  fetchMessages = () => {
     this.props.fetchMessages(this.props.selectedChannel);
+  }
+
+  componentWillMount() {
+    this.fetchMessages();
+  }
+
+  componentDidMount() {
+    this.refresher = setInterval(this.fetchMessages, 3000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.refresher);
+  }
+
+  componentDidUpdate() {
+    this.list.scrollTop = this.list.scrollHeight;
   }
 
   render() {
@@ -18,7 +34,7 @@ class MessageList extends Component {
           <div className="selected-channel">
             {this.props.selectedChannel}
           </div>
-          <div className="messages__content">
+          <div className="messages__content" ref={(list) => { this.list = list; }}>
             <h1>Welcome to the channel. Start conversation!</h1>
           </div>
           <MessageForm />
@@ -31,7 +47,7 @@ class MessageList extends Component {
         <div className="selected-channel">
           {this.props.selectedChannel}
         </div>
-        <div className="messages__content">
+        <div className="messages__content" ref={(list) => { this.list = list; }}>
           {this.props.messages.map((message) => {
             return <Message message={message} key={message.created_at} />
           })}
