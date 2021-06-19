@@ -17,7 +17,7 @@ class ChannelList extends Component {
 
   handleActive = (channel) => {
     if(channel === this.props.selectedChannel) {
-      return <p className="selected">></p>
+      return "> "
     }
   }
 
