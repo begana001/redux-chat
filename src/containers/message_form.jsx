@@ -28,7 +28,7 @@ class MessageForm extends Component {
   render() {
     return (
       <form className="message-form form-group" onSubmit={this.handleSubmit} >
-        <label htmlFor="message-input">{this.props.currentUser}</label>
+        <label className="message-form__current-user" htmlFor="message-input">{this.props.currentUser}</label>
         <input
           id="message-input"
           type="text"

@@ -19,6 +19,8 @@ $h2: 32px;
 $h3: 24px;
 $h4: 21px;
 
+$quicksand: 'Quicksand', sans-serif;
+
 .title{
   font-family: 'Raleway', sans-serif;
   font-size: $h1;
@@ -26,7 +28,7 @@ $h4: 21px;
 }
 
 .channels {
-  font-family: 'Quicksand', sans-serif;
+  font-family: $quicksand;
 }
 
 .channels__title {
@@ -40,4 +42,14 @@ $h4: 21px;
 .channel {
   list-style-type: none;
   font-size: $h4;
+}
+
+.messages__current-channel {
+  font-family: $quicksand;
+  font-size: 24px;
+}
+
+.messages__current-channel--online {
+  font-size: 14px;
+  color: green;
 }

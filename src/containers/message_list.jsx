@@ -6,6 +6,9 @@ import { fetchMessages } from '../actions';
 import Message from '../components/message.jsx';
 import MessageForm from './message_form.jsx';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
+
 class MessageList extends Component {
   fetchMessages = () => {
     this.props.fetchMessages(this.props.selectedChannel);
@@ -32,7 +35,7 @@ class MessageList extends Component {
       return (
         <div className="messages__container col-sm-9">
           <div className="messages__current-channel">
-            {this.props.selectedChannel}
+            <p>{this.props.selectedChannel}</p> <FontAwesomeIcon icon={faCircle} className="messages__current-channel--online" />
           </div>
           <div className="messages__content" ref={(list) => { this.list = list; }}>
             <h1>Welcome to the channel. Start conversation!</h1>

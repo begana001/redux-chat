@@ -1,23 +1,28 @@
 //stick-man__haed--small
 
 .messages__container {
-  border: 1px solid;
-  padding: 10px;
   height: 60vh;
 }
 
 .messages__current-channel {
   height: 10%;
+  padding-right: 15px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  p {
+    margin: 0;
+    padding-right: 10px;
+  }
 }
 
 .messages__content {
-  height: 80%;
-  border: 1px solid blue;
+  height: 75%;
   overflow-y: scroll;
 }
 
 .message-form {
   display: flex;
   height: 10%;
-  padding: 10px;
+  align-items: center;
 }
