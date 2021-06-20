@@ -31,7 +31,7 @@ class MessageList extends Component {
     if(this.props.messages.length === 0) {
       return (
         <div className="messages__container col-sm-9">
-          <div className="channel__selected">
+          <div className="messages__current-channel">
             {this.props.selectedChannel}
           </div>
           <div className="messages__content" ref={(list) => { this.list = list; }}>
