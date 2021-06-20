@@ -5,6 +5,7 @@ body {
 
 @import './config/fonts';
 @import './config/cards';
+@import './components/message_container';
 
 .app {
   padding: 75px;
@@ -30,18 +31,6 @@ body {
   justify-content: space-between;
   color: green;
   font-weight: bold;
-}
-
-.messages__content {
-  height: 60vh;
-  border: 1px solid blue;
-  overflow-y: scroll;
-}
-
-.message-form {
-  display: flex;
-  height: 10vh;
-  padding: 10px;
 }
 
 .channel {

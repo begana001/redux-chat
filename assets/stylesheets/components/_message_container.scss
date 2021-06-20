@@ -1,0 +1,21 @@
+.messages__container {
+  border: 1px solid;
+  padding: 10px;
+  height: 60vh;
+}
+
+.channel__selected {
+  height: 10%;
+}
+
+.messages__content {
+  height: 80%;
+  border: 1px solid blue;
+  overflow-y: scroll;
+}
+
+.message-form {
+  display: flex;
+  height: 10%;
+  padding: 10px;
+}
