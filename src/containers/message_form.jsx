@@ -3,6 +3,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createMessage } from '../actions';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+
 class MessageForm extends Component {
   constructor(props) {
     super(props);
@@ -28,7 +31,7 @@ class MessageForm extends Component {
   render() {
     return (
       <div className="message form-group">
-        <label className="message-form__current-user" htmlFor="message-input">{this.props.currentUser}</label>
+        <label className="message-form__current-user" htmlFor="message-input"><FontAwesomeIcon icon={faUser} className="message-from__current-user-icon" />  {this.props.currentUser}</label>
         <form className="message-form" onSubmit={this.handleSubmit} >
           <input
             id="message-input"
