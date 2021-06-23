@@ -35,10 +35,10 @@ class MessageList extends Component {
       return (
         <div className="messages__container col-sm-9">
           <div className="messages__current-channel">
-            <p>{this.props.selectedChannel}</p> <FontAwesomeIcon icon={faCircle} className="messages__current-channel--online" />
+            <p>#{this.props.selectedChannel}</p> <FontAwesomeIcon icon={faCircle} className="messages__current-channel--online" />
           </div>
           <div className="messages__content" ref={(list) => { this.list = list; }}>
-            <h1>Welcome to the #{this.props.selectedChannel} channel. Start conversation!</h1>
+            <h3>Welcome to the #{this.props.selectedChannel} channel. Start conversation!</h3>
           </div>
           <MessageForm />
         </div>

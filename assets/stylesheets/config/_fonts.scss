@@ -53,3 +53,10 @@ $quicksand: 'Quicksand', sans-serif;
   font-size: 14px;
   color: green;
 }
+
+$placeholder: ('::-webkit-input-placeholder', ':-moz-placeholder', '::-moz-placeholder', ':-ms-input-placeholder', '::input-placeholder', '::placeholder');
+@each $selector in $placeholder {
+  #{$selector} {
+    padding-left: 10px;
+  }
+}

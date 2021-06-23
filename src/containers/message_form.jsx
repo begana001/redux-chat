@@ -27,17 +27,19 @@ class MessageForm extends Component {
 
   render() {
     return (
-      <form className="message-form form-group" onSubmit={this.handleSubmit} >
+      <div className="message form-group">
         <label className="message-form__current-user" htmlFor="message-input">{this.props.currentUser}</label>
-        <input
-          id="message-input"
-          type="text"
-          className="message-form__input form-control"
-          placeholder="type your message"
-          onChange={this.handleChange}
-        />
-        <button type="submit" className="btn btn-primary">SEND</button>
-      </form>
+        <form className="message-form" onSubmit={this.handleSubmit} >
+          <input
+            id="message-input"
+            type="text"
+            className="message-form__input form-control"
+            placeholder="type your message"
+            onChange={this.handleChange}
+          />
+          <button type="submit" className="message-form__submit-button btn btn-primary">SEND</button>
+        </form>
+      </div>
     );
   }
 };

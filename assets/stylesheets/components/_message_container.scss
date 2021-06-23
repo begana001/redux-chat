@@ -21,8 +21,26 @@
   overflow-y: scroll;
 }
 
+.message {
+  height: 10%;
+}
+
 .message-form {
   display: flex;
-  height: 10%;
   align-items: center;
+}
+
+.message-form__current-user {
+  padding-left: 10px;
+}
+
+.message-form__input {
+  border-radius: 15px 0 0 15px;
+}
+
+.message__info {
+  display: flex;
+  justify-content: space-between;
+  color: green;
+  font-weight: bold;
 }
