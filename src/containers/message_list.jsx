@@ -38,7 +38,7 @@ class MessageList extends Component {
             <p>{this.props.selectedChannel}</p> <FontAwesomeIcon icon={faCircle} className="messages__current-channel--online" />
           </div>
           <div className="messages__content" ref={(list) => { this.list = list; }}>
-            <h1>Welcome to the channel. Start conversation!</h1>
+            <h1>Welcome to the #{this.props.selectedChannel} channel. Start conversation!</h1>
           </div>
           <MessageForm />
         </div>
