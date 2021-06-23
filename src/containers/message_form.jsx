@@ -25,12 +25,12 @@ class MessageForm extends Component {
     //TODO: fetch post request
     e.preventDefault();
     this.props.createMessage(this.props.selectedChannel, this.props.currentUser, this.state.value);
-    this.setState({ value: '' });
+    document.querySelector('.message-form').reset();
   }
 
   render() {
     return (
-      <div className="message form-group">
+      <div className="sending-message form-group">
         <label className="message-form__current-user" htmlFor="message-input"><FontAwesomeIcon icon={faUser} className="message-from__current-user-icon" />  {this.props.currentUser}</label>
         <form className="message-form" onSubmit={this.handleSubmit} >
           <input

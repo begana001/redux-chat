@@ -20,6 +20,7 @@ $h3: 24px;
 $h4: 21px;
 
 $quicksand: 'Quicksand', sans-serif;
+$inter : 'Inter', sans-serif;
 
 .title{
   font-family: 'Raleway', sans-serif;
@@ -52,6 +53,10 @@ $quicksand: 'Quicksand', sans-serif;
 .messages__current-channel--online {
   font-size: 14px;
   color: green;
+}
+
+.messages__content {
+  font-family: $inter;
 }
 
 $placeholder: ('::-webkit-input-placeholder', ':-moz-placeholder', '::-moz-placeholder', ':-ms-input-placeholder', '::input-placeholder', '::placeholder');
