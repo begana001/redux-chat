@@ -47,8 +47,8 @@ class MessageList extends Component {
 
     return (
       <div className="messages__container col-sm-9">
-        <div className="selected-channel">
-          {this.props.selectedChannel}
+        <div className="messages__current-channel">
+          <p>#{this.props.selectedChannel}</p> <FontAwesomeIcon icon={faCircle} className="messages__current-channel--online" />
         </div>
         <div className="messages__content" ref={(list) => { this.list = list; }}>
           {this.props.messages.map((message) => {
