@@ -58,5 +58,11 @@ $placeholder: ('::-webkit-input-placeholder', ':-moz-placeholder', '::-moz-place
 @each $selector in $placeholder {
   #{$selector} {
     padding-left: 10px;
+    :focus {
+      opacity: 0;
+    }
   }
+  // #{$selector}:focus {
+  //   opacity: 0;
+  // }
 }
