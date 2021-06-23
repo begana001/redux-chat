@@ -21,12 +21,22 @@ class ChannelList extends Component {
     }
   }
 
+  handleMouseOver = (e) => {
+    e.target.style.backgroundColor = "rgba(169, 214, 229, 0.5)";
+  }
+
+  handleMouseOut = (e) => {
+    e.target.style.backgroundColor = "";
+  }
+
   renderChannel = (channel) => {
     return (
       <li
       key={channel}
       className={channel === this.props.selectedChannel ? "channel selected" : "channel" }
       onClick={this.handleClick}
+      onMouseOver={this.handleMouseOver}
+      onMouseOut={this.handleMouseOut}
       >
         {this.handleActive(channel)}
         {channel}
@@ -37,8 +47,8 @@ class ChannelList extends Component {
   render() {
     return (
       <div className="channels col-sm-3">
-        <ul>
-          <h3 className="channels__title">channels</h3>
+        <h3 className="channels__title">channels</h3>
+        <ul className="channels__ul">
           {this.props.channels.map((channel) => this.renderChannel(channel))}
         </ul>
       </div>

@@ -7,6 +7,7 @@ body {
 @import './config/cards';
 @import './components/message_container';
 @import './components/buttons';
+@import './layout/channel_list';
 
 .app {
   padding: 75px;
@@ -15,8 +16,4 @@ body {
 .channels {
   padding: 10px;
   height: 100vh;
-}
-
-.channel {
-  padding: 10px;
 }
