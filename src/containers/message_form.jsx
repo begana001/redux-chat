@@ -40,7 +40,7 @@ class MessageForm extends Component {
             placeholder="type your message"
             onChange={this.handleChange}
           />
-          <button type="submit" className="message-form__submit-button btn btn-primary">SEND</button>
+          <button type="submit" className="message-form__submit-button btn">SEND</button>
         </form>
       </div>
     );
