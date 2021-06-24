@@ -1,13 +1,17 @@
-body {
-  background-color: #001845;
-  overflow: hidden;
-}
-
 @import './config/fonts';
 @import './config/cards';
+@import './config/colors';
 @import './components/message_container';
 @import './components/buttons';
+
 @import './layout/channel_list';
+@import './layout/message_list';
+@import './layout/message_form';
+
+body {
+  background-color: $black;
+  overflow: hidden;
+}
 
 .app {
   padding: 75px;
