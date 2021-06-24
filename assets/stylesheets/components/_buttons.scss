@@ -1,5 +1,7 @@
+@import './config/colors';
+
 .message-form__submit-button {
   border-radius: 0 15px 15px 0;
-  background-color: #014F86;
-  border-color: #014F86;
+  background-color: $grayblue;
+  border-color: $grayblue;
 }
