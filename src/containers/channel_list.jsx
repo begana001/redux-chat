@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { selectChannel, fetchMessages } from '../actions';
+import { fetchMessages } from '../actions';
+import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons';
 
 class ChannelList extends Component {
-  componentWillMount() {
-    this.props.selectChannel(this.props.selectedChannel);
-  }
-
-  handleClick = (e) => {
-    this.props.selectChannel(e.currentTarget.innerText);
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.channelFromParams !== this.props.channelFromParams) {
+      this.props.fetchMessages(nextProps.channelFromParams);
+    };
   }
 
   handleActive = (channel) => {
-    if(channel === this.props.selectedChannel) {
+    if(channel === this.props.channelFromParams) {
       return "> "
     }
   }
@@ -33,13 +32,15 @@ class ChannelList extends Component {
     return (
       <li
       key={channel}
-      className={channel === this.props.selectedChannel ? "channel selected" : "channel" }
-      onClick={this.handleClick}
-      onMouseOver={this.handleMouseOver}
-      onMouseOut={this.handleMouseOut}
+      className={channel === this.props.channelFromParams ? "channel selected" : "channel" }
       >
-        {this.handleActive(channel)}
-        {channel}
+        <Link to={`/${channel}`} class="channel__link"
+          onMouseOver={this.handleMouseOver}
+          onMouseOut={this.handleMouseOut}
+        >
+          {this.handleActive(channel)}
+          {channel}
+        </Link>
       </li>
     );
   }
@@ -57,13 +58,12 @@ class ChannelList extends Component {
 };
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ selectChannel, fetchMessages }, dispatch);
+  return bindActionCreators({ fetchMessages }, dispatch);
 }
 
 function mapStateToProps(state) {
   return {
-    channels: state.channels,
-    selectedChannel: state.selectedChannel
+    channels: state.channels
   };
 }
 

@@ -11,6 +11,22 @@
 body {
   background-color: $black;
   overflow: hidden;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none !important;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: white;
+  background-color: none;
+}
+
+#root {
+  width: 1300px;
 }
 
 .app {

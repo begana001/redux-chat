@@ -43,6 +43,12 @@ $inter : 'Inter', sans-serif;
 .channel {
   list-style-type: none;
   font-size: $h4;
+  a:hover {
+    display: block;
+  }
+  a {
+    border-radius: 4px;
+  }
 }
 
 .messages__current-channel {

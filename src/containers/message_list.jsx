@@ -10,24 +10,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 class MessageList extends Component {
-  fetchMessages = () => {
-    this.props.fetchMessages(this.props.selectedChannel);
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.channelFromParams !== this.props.channelFromParams) {
+      this.props.fetchMessages(nextProps.channelFromParams);
+    };
+    if(!this.props.messages) {
+      this.props.fetchMessages(this.props.channelFromParams)
+    };
   }
 
-  componentWillMount() {
-    this.fetchMessages();
+  fetchMessages = () => {
+    this.props.fetchMessages(this.props.channelFromParams);
   }
 
   componentDidMount() {
-    this.refresher = setInterval(this.fetchMessages, 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.refresher);
+    this.refresher = setInterval(this.fetchMessages, 1000)
   }
 
   componentDidUpdate() {
     this.list.scrollTop = this.list.scrollHeight;
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.refresher);
   }
 
   render() {
@@ -35,12 +40,12 @@ class MessageList extends Component {
       return (
         <div className="messages__container col-sm-9">
           <div className="messages__current-channel">
-            <p>#{this.props.selectedChannel}</p> <FontAwesomeIcon icon={faCircle} className="messages__current-channel--online" />
+            <p>#{this.props.channelFromParams}</p> <FontAwesomeIcon icon={faCircle} className="messages__current-channel--online" />
           </div>
           <div className="messages__content" ref={(list) => { this.list = list; }}>
-            <h3>Welcome to the #{this.props.selectedChannel} channel. Start conversation!</h3>
+            <h3>Welcome to the #{this.props.channelFromParams} channel. Start conversation!</h3>
           </div>
-          <MessageForm />
+          <MessageForm channelFromParams={this.props.channelFromParams} />
         </div>
       );
     }
@@ -48,14 +53,14 @@ class MessageList extends Component {
     return (
       <div className="messages__container col-sm-9">
         <div className="messages__current-channel">
-          <p>#{this.props.selectedChannel}</p> <FontAwesomeIcon icon={faCircle} className="messages__current-channel--online" />
+          <p>#{this.props.channelFromParams}</p> <FontAwesomeIcon icon={faCircle} className="messages__current-channel--online" />
         </div>
         <div className="messages__content" ref={(list) => { this.list = list; }}>
           {this.props.messages.map((message) => {
             return <Message message={message} key={message.created_at} />
           })}
         </div>
-        <MessageForm />
+        <MessageForm channelFromParams={this.props.channelFromParams} />
       </div>
     );
   }
@@ -63,8 +68,7 @@ class MessageList extends Component {
 
 function mapStateToProps(state) {
   return {
-    messages: state.messages,
-    selectedChannel: state.selectedChannel
+    messages: state.messages
   };
 }
 

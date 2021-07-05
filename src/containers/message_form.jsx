@@ -24,7 +24,7 @@ class MessageForm extends Component {
   handleSubmit = (e) => {
     //TODO: fetch post request
     e.preventDefault();
-    this.props.createMessage(this.props.selectedChannel, this.props.currentUser, this.state.value);
+    this.props.createMessage(this.props.channelFromParams, this.props.currentUser, this.state.value);
     document.querySelector('.message-form').reset();
   }
 
@@ -49,7 +49,6 @@ class MessageForm extends Component {
 
 function mapStateToProps(state) {
   return {
-    selectedChannel: state.selectedChannel,
     currentUser: state.currentUser
   }
 }
